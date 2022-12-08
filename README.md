@@ -160,3 +160,58 @@ from tb_aluno where 2022 - ano_nasc >= 18
 ```
 <h3> Resultado </h3>
 <img src="https://user-images.githubusercontent.com/105735037/206178292-be49f604-890b-494c-9a4b-07f093e433c1.PNG"></img>
+
+<h2> 7ª Questão </h2>
+Faça um comando SQL que retorna o nome de todas as mulheres.
+
+```
+select nome_aluno, sexo
+from tb_aluno where sexo = 'F'
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186706-6570fca1-5caa-41d0-8a2f-c71fc50761dd.png"></img>
+
+<h2> 8ª Questão </h2>
+Faça um comando SQL que retorna o nome de todas as mulheres matriculadas no curso de Medicina.
+
+```
+select tb_aluno.nome_aluno as mulheres_em_medicina
+from tb_aluno
+inner join tb_matricula
+on tb_matricula.codigo_aluno = tb_aluno.codigo_aluno
+and tb_matricula.codigo_curso = 1
+and tb_aluno.sexo = 'F'
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186751-fd47532f-a7c7-4ba0-ac4a-5aa069914f5b.png"></img>
+
+<h2> 9ª Questão </h2>
+Faça um comando SQL que retorna os nomes dos cursos ordenados por ordem alfabética.
+
+```
+select nome_curso
+from tb_curo order by nome_curso asc
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186768-c63918de-50f1-41da-a721-61b891b4f73e.png"></img>
+
+<h2> 10ª Questão </h2>
+Crie o enunciado de uma consulta SQL que utiliza "junção" (com resposta).
+
+```
+select ano_nasc,tb_curso.nome_curso,tb_aluno.nome_aluno
+from tb_aluno
+inner join tb_curso
+on tb_aluno.cod_aluno = tb_curso.cod_curso
+order by nome_curso asc 
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/104003510/206247087-8d9edbac-8794-418b-b4c2-034bb61a5c69.jpg"></img>
+
+
+
+
+
+
+
+
