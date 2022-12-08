@@ -127,3 +127,36 @@ from tb_aluno where 2022 - ano_nasc >= 18
 ```
 <h3> Resultado </h3>
 <img src="https://user-images.githubusercontent.com/114403979/206186533-a190cc9f-05e8-4611-a4ea-f29c2c64f3d8.png"></img>
+
+<h2> 4ª Questão </h2>
+Desenvolva um comando SQL que mostre o total de alunos.v
+
+```
+select count(codigo_aluno)
+from tb_aluno
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186568-aa8d2e99-5bd3-437c-a59c-e5c1cbec1640.png"></img>
+
+<h2> 5ª Questão </h2>
+Escreva um comando SQL para listar o total de alunos matriculados em cada curso.
+
+```
+select tb_curso.nome_curso,
+codigo_curso + codigo_aluno as numero_alunos
+from tb_curso
+inner join tb_aluno
+on tb_aluno.codigo_aluno = tb_curso.codigo_curso
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186607-70f17862-97dd-4c9e-8318-ca044ccb31a5.png"></img>
+
+<h2> 6ª Questão </h2>
+Desenvolva um comando SQL que retorna o nome de todos os alunos maiores que 18 anos.
+
+```
+select nome_aluno
+from tb_aluno where 2022 - ano_nasc >= 18
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/105735037/206178292-be49f604-890b-494c-9a4b-07f093e433c1.PNG"></img>
