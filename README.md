@@ -7,6 +7,7 @@ create database bdescola
 ```
 
 <h2> Criando as Tabelas </h2>
+
 Criando a tabela tb_aluno
 
 ```
@@ -42,3 +43,52 @@ add constraint fk_codigo_aluno foreign  key (codigo_aluno) references tb_aluno(c
 ```
 
 <h2> Inserindo os dados nas tabelas </h2>
+
+Tabela tb_aluno
+
+```
+insert into tb_aluno (codigo_aluno, nome_aluno, ano_nasc, email, sexo) 
+    values (1,'Josiel Jardim',1974,'josiel@provaSQL.com.br','M');
+
+insert into tb_aluno (codigo_aluno, nome_aluno, ano_nasc, email, sexo) 
+    values (2,'Ana Maria',1980,'ana@provaSQL.com.br','F');
+
+insert into tb_aluno (codigo_aluno, nome_aluno, ano_nasc, email, sexo) 
+    values (3,'João Pedro',1979,'joao@provaSQL.com.br','M');
+```
+Tabela tb_curso
+```
+insert into tb_curso (codigo_curso, nome_curso)
+    values (1,'Medicina');
+
+insert into tb_curso (codigo_curso, nome_curso)
+    values (2,'Arquitetura');
+
+insert into tb_curso (codigo_curso, nome_curso)
+    values (3,'Filosofia');
+
+insert into tb_curso (codigo_curso, nome_curso)
+    values (4, 'Informatica');
+
+insert into tb_curso (codigo_curso, nome_curso)
+   values (5,'Jornalismo');
+```
+Tabela tb_matricula
+```
+insert into tb_matricula (codigo_curso, codigo_aluno)  
+    values (1,1);
+
+insert into tb_matricula (codigo_curso, codigo_aluno)  
+    values (1,2);
+
+insert into tb_matricula (codigo_curso, codigo_aluno)  
+    values (2,3);
+
+insert into tb_matricula (codigo_curso, codigo_aluno)  
+    values (5,3);
+```
+
+
+
+
+
