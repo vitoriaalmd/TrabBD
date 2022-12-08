@@ -14,7 +14,7 @@ Criando a tabela tb_aluno
 create table tb_aluno( 
 codigo_aluno integer primary key, 
 nome_aluno varchar(60) not null, 
-ano_nascimento int, 
+ano_nasc int, 
 email varchar(60), 
 sexo varchar not null 
 )  
@@ -88,7 +88,42 @@ insert into tb_matricula (codigo_curso, codigo_aluno)
     values (5,3);
 ```
 
+<h1> Resolução da Prova Prática </h1>
+<h2> 1ª Questão </h2>
+Faça um comando SQL para matricular o aluno "Pedro César" no curso de informática.Os dados devem ser inseridos na tabela TB_MATRÍCULA.
 
+```
+select * from tb_aluno
+insert into tb_aluno(codigo_aluno, nome_aluno, ano_nasc, email, sexo)
+values ('4', 'Pedro César', '1995-06-04', 'pedro@provaSQL.com.br', 'M')
+select * from tb_matricula
+insert into tb_matricula(codigo_curso, codigo_aluno)
+values ('4', '4')
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186429-af1a1a67-b402-4d8d-9c29-eb38b7826505.png"></img>
+<img src="https://user-images.githubusercontent.com/114403979/206186442-0047b5c9-f95d-4b70-99e5-2033b8503a11.png"></img>
 
+<h2> 2ª Questão </h2>
+Escreva um comando SQL que retorne os nomes dos alunos e do(s) cursos em que estão matriculados.Os dados devem estar ordenados pelo nome do curso.
 
+```
+select tb_aluno.nome_aluno, tb_curso.nome_curso
+from tb_aluno
+inner join tb_matricula
+on tb_aluno.codigo_aluno = tb_matricula.codigo_aluno
+inner join tb_curso
+on tb_curso.codigo_curso = tb_matricula.codigo_curso
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186499-aa04cc46-34ac-4e64-b51f-1843522f754f.png"></img>
 
+<h2> 3ª Questão </h2>
+Crie um comando SQL que retorne o e-mail de todos os alunos maiores de idade.
+
+```
+select email
+from tb_aluno where 2022 - ano_nasc >= 18
+```
+<h3> Resultado </h3>
+<img src="https://user-images.githubusercontent.com/114403979/206186533-a190cc9f-05e8-4611-a4ea-f29c2c64f3d8.png"></img>
